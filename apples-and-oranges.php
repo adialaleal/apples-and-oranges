@@ -9,22 +9,26 @@ function countApplesAndOranges($s, $t, $a, $b, $apples, $oranges) {
     $fa = [];
     foreach ($apples as $ka)
         $fapple = $ka + $a;
-      if ($fapple >= $s){
-        array_push($fa,1);
-      }else{
-          array_push($fa,0);
-      }
+      if ($fapple >= $s)
+        array_push($fa, 1);
+
     foreach ($oranges as $ko)
         $forange = $ko + $b;
-      if ($forange <= $t){
+      if ($forange <= $t)
         array_push($fo,1);
+
+      if (count($fa) > 0) {
+        print count($fa);
       }else{
-        array_push($fo,0);
+        print "0";
+      }
+      echo "\n";
+      if (count($fo) > 0) {
+        print count($fo);
+      }else{
+        print "0";
       }
 
-        print array_sum($fa);
-        echo "\n";
-        print array_sum($fo);
 }
 
 $__fp = fopen("php://stdin", "r");
