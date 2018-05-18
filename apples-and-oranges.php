@@ -4,31 +4,34 @@
  * Complete the countApplesAndOranges function below.
  */
 function countApplesAndOranges($s, $t, $a, $b, $apples, $oranges) {
-
-    $fo = [];
-    $fa = [];
-    foreach ($apples as $ka)
-        $fapple = $ka + $a;
-      if ($fapple >= $s)
-        array_push($fa, 1);
-
-    foreach ($oranges as $ko)
-        $forange = $ko + $b;
-      if ($forange <= $t)
-        array_push($fo,1);
-
-      if (count($fa) > 0) {
-        print count($fa);
-      }else{
-        print "0";
+    //Definindo variáveis = 0
+    $fruito = $fruito = 0;
+    //Executando a contagem de elementos do array para posterior calculo
+    for ($i = 0; $i < count($apples); $i++){
+     /* Se o calculo da distancia da árvore $a com a distância da fruta caída,
+      * for maior que o ponto inicial da casa, incrementa-se na variável $fruita
+      */
+      $fapple = ($a + $apples[$i]);
+        if ($fapple >= $s && $fapple <= $t){
+        $fruita++;
       }
-      echo "\n";
-      if (count($fo) > 0) {
-        print count($fo);
-      }else{
-        print "0";
+    }
+    // Imprime o resultado da variavel $fruita
+    print $fruita;
+    // Salto de linha
+    echo "\n";
+    //Executando a contagem de elementos do array para posterior calculo
+    for ($i = 0; $i < count($oranges); $i++){
+      /* Se o calculo da distancia da árvore $b com a distância da fruta caída,
+       * for menor que o ponto final da casa, incrementa-se na variável $fruito
+       */
+      $forange = ($b + $oranges[$i]);
+        if ($forange >= $s && $forange <= $t){
+        $fruito++;
       }
-
+    }
+    // Imprime o resultado da variavel $fruito
+    print $fruito;
 }
 
 $__fp = fopen("php://stdin", "r");
